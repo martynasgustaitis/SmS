@@ -18,8 +18,9 @@ OOP pilars
 Polymorphism allows objects of different classes to be treated as objects of a common superclass. It is typically achieved through method overriding, where subclasses provide specific implementations of methods declared in their superclasses.
 In my code, polymorphism is exhibited by the update_info method. Different user types (e.g., RegularUser) can implement their own version of this method.
 # Polymorphism snippet
-user = RegularUser("Alice", 1990, "Developer", "123456789")
-user.update_info(phone_number="987654321")
+
+`user = RegularUser("Alice", 1990, "Developer", "123456789")
+user.update_info(phone_number="987654321")`
 
 
 *Abstraction
@@ -28,20 +29,21 @@ User class is an abstract class, and the update_info method is an abstract metho
 # Abstraction snippet
 from abc import ABC, abstractmethod
 
-class User(ABC):
+`class User(ABC):
     @abstractmethod
     def update_info(self, **kwargs):
-        pass
+        pass`
 
 
 *Inheritance
 Inheritance allows a class to inherit attributes and methods from another class. In my code, RegularUser inherits from User.
 # Inheritance snippet
-class RegularUser(User):
+
+`class RegularUser(User):
     def update_info(self, **kwargs):
         for key, value in kwargs.items():
             if hasattr(self, key):
-                setattr(self, key, value)
+                setattr(self, key, value)`
 
 
 # RegularUser inherits all attributes and methods from User
@@ -50,7 +52,8 @@ class RegularUser(User):
 Encapsulation is the bundling of data and methods that operate on that data within one unit, often a class, and restricting access to some of the object's components.
 In my code, user data is encapsulated within the User class. The attributes are protected from direct access from outside the class, and interaction is done through methods.
 # Encapsulation snippet
-class User(ABC):
+
+`class User(ABC):
     def __init__(self, name, birth_year, position, phone_number):
         self.name = name
         self.birth_year = birth_year
@@ -61,7 +64,7 @@ class User(ABC):
         return self.name
 
     def set_name(self, name):
-        self.name = name
+        self.name = name`
 #RESULTS
 Biggest challenge was to understand what was needed to do and how should it look. One of the biggest issues i've had was linking github with vs code and adding txt file, we didn't have any practice on that.
 
