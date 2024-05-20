@@ -14,18 +14,18 @@ All of the functional requirements are explained below
 •	Why it is most suitable: In scenarios where we may need to support different types of users with varying behaviors and characteristics, the Factory Method Pattern provides a flexible approach to object creation. This makes the system easily extendable and maintainable, allowing for new user types to be added with minimal changes to the existing codebase.
 
 OOP pilars
-Polymorphism
+*Polymorphism
 Polymorphism allows objects of different classes to be treated as objects of a common superclass. It is typically achieved through method overriding, where subclasses provide specific implementations of methods declared in their superclasses.
-In your code, polymorphism is exhibited by the update_info method. Different user types (e.g., RegularUser) can implement their own version of this method.
-
+In my code, polymorphism is exhibited by the update_info method. Different user types (e.g., RegularUser) can implement their own version of this method.
+# Polymorphism snippet
 user = RegularUser("Alice", 1990, "Developer", "123456789")
 user.update_info(phone_number="987654321")
 
 
 *Abstraction
 Abstraction involves creating simple, easy-to-use interfaces for more complex underlying code. Abstract classes and methods provide a template for other classes to implement.
-Your User class is an abstract class, and the update_info method is an abstract method.This ensures that any subclass of User must implement the update_info method.
-
+User class is an abstract class, and the update_info method is an abstract method.This ensures that any subclass of User must implement the update_info method.
+# Abstraction snippet
 from abc import ABC, abstractmethod
 
 class User(ABC):
@@ -35,7 +35,7 @@ class User(ABC):
 
 
 *Inheritance
-Inheritance allows a class to inherit attributes and methods from another class. In your code, RegularUser inherits from User.
+Inheritance allows a class to inherit attributes and methods from another class. In my code, RegularUser inherits from User.
 # Inheritance snippet
 class RegularUser(User):
     def update_info(self, **kwargs):
@@ -48,7 +48,7 @@ class RegularUser(User):
 
 *encapsulation
 Encapsulation is the bundling of data and methods that operate on that data within one unit, often a class, and restricting access to some of the object's components.
-In your code, user data is encapsulated within the User class. The attributes are protected from direct access from outside the class, and interaction is done through methods.
+In my code, user data is encapsulated within the User class. The attributes are protected from direct access from outside the class, and interaction is done through methods.
 # Encapsulation snippet
 class User(ABC):
     def __init__(self, name, birth_year, position, phone_number):
